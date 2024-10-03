@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hadi Najafizadeh-Moshizi - Electrical Engineer</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- AOS CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <style>
+        body {
+            scroll-behavior: smooth;
+            background-color: #f4f4f4;
+        }
+
+        /* Header Styles */
+        .main-header {
+            background: linear-gradient(
+                    rgba(0, 0, 0, 0.6),
+                    rgba(0, 0, 0, 0.6)
+                ),
+                url('./HeaderBackground.png') no-repeat center center/cover;
+            color: #fff;
+            padding: 150px 0 100px 0;
+            text-align: center;
+        }
+
+        .main-header h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .main-header p {
+            font-size: 1.5rem;
+            font-weight: 300;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            padding: 20px;
+            background-color: #003366;
+        }
+
+        .navbar-nav .nav-link {
+            color: #fff !important;
+            margin-right: 15px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #ffd700 !important;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 60px 0;
+            scroll-margin-top: 80px; /* Adjust to height of navbar */
+        }
+
+        section h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 40px;
+            position: relative;
+            padding-bottom: 20px;
+            color: #003366;
+            text-align: center;
+        }
+
+        section h2::after {
+            content: '';
+            width: 100px;
+            height: 3px;
+            background-color: #ffd700;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* DET Results Circle Styling */
+        .circle-container {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 20px;
+            position: relative;
+        }
+
+        .circle-container canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .circle-container .progressbar-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #003366;
+        }
+
+        /* Center the button below the DET Results */
+        .btn-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #003366;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        footer a {
+            color: #ffd700;
+            margin: 0 10px;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: #fff;
+        }
+
+        /* Back to Top Button */
+        #backToTopBtn {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            background-color: #003366;
+            color: #fff;
+            border: none;
+            padding: 15px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            display: none;
+            z-index: 99;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #backToTopBtn:hover {
+            background-color: #00509e;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header Section -->
+    <header class="main-header" id="home">
+        <div class="container">
+            <h1 data-aos="fade-up">Hadi Najafizadeh-Moshizi</h1>
+            <p data-aos="fade-up" data-aos-delay="200">Graduate Student, Electrical Engineering in Power Systems</p>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#home">Hadi NM</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <!-- Navigation Links -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About Me</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#education">Education</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#research">Research</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#det-results">English Proficiency</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2 data-aos="fade-up">About Me</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
+                    <p>
+                        I am an Electrical Engineer with a deep passion for Power Systems and their role in shaping the future of energy. Throughout my academic and professional journey, I've focused on integrating advanced techniques like AI to improve power system reliability and resiliency. I'm always eager to learn and explore innovative solutions, especially in areas like smart grid management and renewable energy integration.
+<br> My experience has taught me the importance of collaboration and continuous improvement, and I enjoy working alongside others to solve complex challenges in a practical, efficient way. I believe that by combining technical knowledge with a thoughtful, grounded approach, we can contribute to more sustainable and reliable energy systems for the future.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="bg-light">
+        <div class="container">
+            <h2 data-aos="fade-up">Education</h2>
+            <div class="row">
+                <div class="col-md-6" data-aos="fade-right" data-aos-delay="200">
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">Master of Science in Electrical Engineering</h5>
+                            <p class="card-text">
+                                <strong>Isfahan University of Technology</strong><br>
+                                Isfahan, Iran<br>
+                                <!-- Cumulative GPA: 3/4 (Thesis Grade Excluded)<br> -->
+                                Thesis Grade: Excellent<br>
+                                Sep. 2018 – Oct. 2021
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6" data-aos="fade-left" data-aos-delay="200">
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">Bachelor of Science in Electrical Engineering</h5>
+                            <p class="card-text">
+                                <strong>Sirjan University of Technology</strong><br>
+                                Kerman, Iran<br>
+                                <!-- Cumulative GPA: 3/4<br> -->
+                                Sep. 2014 – Sep. 2018
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Interests Section -->
+    <section id="research">
+        <div class="container">
+            <h2 data-aos="fade-up">Research Interests</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <ul class="list-group list-group-flush" data-aos="fade-up" data-aos-delay="200">
+                        <li class="list-group-item icon-text">
+                            <i class="fas fa-brain icon"></i>
+                            Application of AI in Power System Analysis
+                        </li>
+                        <li class="list-group-item icon-text">
+                            <i class="fas fa-plug icon"></i>
+                            Power System Reliability & Resiliency
+                        </li>
+                        <li class="list-group-item icon-text">
+                            <i class="fas fa-project-diagram icon"></i>
+                            Bayesian Networks Utilization in Power System Analysis
+                        </li>
+                        <li class="list-group-item icon-text">
+                            <i class="fas fa-solar-panel icon"></i>
+                            Reliability Utilization of DERs
+                        </li>
+                        <li class="list-group-item icon-text">
+                            <i class="fas fa-network-wired icon"></i>
+                            Smart Grid Management
+                        </li>
+                        <li class="list-group-item icon-text">
+                            <i class="fas fa-shield-alt icon"></i>
+                            Risk Management
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="bg-light">
+        <div class="container">
+            <h2 data-aos="fade-up">Projects</h2>
+            <div class="row">
+                <div class="col-lg-12" data-aos="fade-up" data-aos-delay="200">
+                    <div class="accordion" id="projectsAccordion">
+                        <!-- Project Item -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="projectOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    DBN Framework for Evaluating Power System Resiliency against Cascading Failures
+                                    (Mar. 2024 - Present)
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="projectOne"
+                                data-bs-parent="#projectsAccordion">
+                                <div class="accordion-body">
+                                    Developing a Dynamic Bayesian Network framework to assess and enhance the resiliency
+                                    of power systems facing cascading failures, integrating probabilistic methods and AI
+                                    techniques for predictive analysis and risk mitigation.
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Project Item -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="projectTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    Identification & Ranking of Bulk Power System Weak Components using MAP Inference in
+                                    Bayesian Networks (Master’s Thesis, Dec. 2021)
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="projectTwo"
+                                data-bs-parent="#projectsAccordion">
+                                <div class="accordion-body">
+                                    Conducted comprehensive analysis to identify and rank weak components in power
+                                    systems by employing Maximum a Posteriori (MAP) inference within Bayesian Networks,
+                                    contributing to improved system reliability and maintenance strategies.
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Additional Projects -->
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="projectThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    Simulation of DER-Based Microgrids Using Droop Control (Apr. 2020)
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="projectThree"
+                                data-bs-parent="#projectsAccordion">
+                                <div class="accordion-body">
+                                    Simulated and analyzed the performance of Distributed Energy Resource-based
+                                    microgrids using droop control, focusing on stability, load sharing, and
+                                    integration with renewable energy sources.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="projectFour">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                    AC-Constrained Transmission Expansion Planning with GAMS (May. 2019)
+                                </button>
+                            </h2>
+                            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="projectFour"
+                                data-bs-parent="#projectsAccordion">
+                                <div class="accordion-body">
+                                    Developed and optimized an AC-constrained transmission expansion plan using GAMS,
+                                    focusing on minimizing costs and enhancing network reliability under multiple
+                                    scenarios.
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ... Additional Projects -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications Section -->
+    <section id="publications">
+        <div class="container">
+            <h2 data-aos="fade-up">Publications</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="list-group" data-aos="fade-up" data-aos-delay="200">
+                        <div class="list-group-item">
+                            <h5 class="mb-1">
+                                Strategy for Demand Side Management Effectiveness Assessment via a Stochastic Risk-Based
+                                Bidding Approach in a Multi-Energy Microgrid
+                            </h5>
+                            <p class="mb-1">
+                                <strong>Authors:</strong> Seyyed Mostafa NosratAbadi, Hadi
+                                Najafizadeh-Moshizi, Josep M. Guerrero
+                            </p>
+                            <p class="mb-1">
+                                <strong>Published in:</strong> IET Renewable Power Generation
+                            </p>
+                            <small class="text-muted">April 2022</small>
+                        </div>
+                        <div class="list-group-item">
+                            <h5 class="mb-1">
+                                Bayesian-Inspired MAP Inference for Identification of Locally and Globally Weak
+                                Components in Composite Power Systems Reliability
+                            </h5>
+                            <p class="mb-1">
+                                <strong>Authors:</strong> Akbar Ebrahimi, Hadi Najafizadeh-Moshizi, Mahmud
+                                Fotuhi-Firuzabad, Payman Dehghanian, Zeinab Maleki
+                            </p>
+                            <p class="mb-1">
+                                <strong>To Appear in:</strong> IEEE Transactions on Industrial Informatics
+                            </p>
+                            <small class="text-muted">May 2024</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- DET Results Section -->
+<section id="det-results" class="bg-light">
+    <div class="container">
+        <h2 data-aos="fade-up">Duolingo English Test Results</h2>
+        <div class="row justify-content-center">
+            <!-- Overall Score (Top) -->
+            <div class="col-md-12 text-center mb-4">
+                <div class="circle-container" id="circle-overall"></div>
+                <p>Overall Score: <strong>140</strong></p>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <!-- Other Scores (Below) -->
+            <div class="col-md-3 text-center">
+                <div class="circle-container" id="circle-speaking"></div>
+                <p>Speaking: <strong>140</strong></p>
+            </div>
+            <div class="col-md-3 text-center">
+                <div class="circle-container" id="circle-writing"></div>
+                <p>Writing: <strong>145</strong></p>
+            </div>
+            <div class="col-md-3 text-center">
+                <div class="circle-container" id="circle-reading"></div>
+                <p>Reading: <strong>150</strong></p>
+            </div>
+            <div class="col-md-3 text-center">
+                <div class="circle-container" id="circle-listening"></div>
+                <p>Listening: <strong>125</strong></p>
+            </div>
+        </div>
+        <div class="btn-container">
+            <a href="https://certs.duolingo.com/jvgcy7nsw2kng8ba" target="_blank" class="btn btn-primary mt-3">View Official Certificate</a>
+        </div>
+    </div>
+</section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="bg-light">
+        <div class="container">
+            <h2 data-aos="fade-up">Skills</h2>
+            <div class="row">
+                <!-- Programming Languages -->
+                <div class="col-md-6" data-aos="fade-right" data-aos-delay="200">
+                    <h4>Programming Languages</h4>
+                    <div class="progress mb-3">
+                        <div class="progress-bar" role="progressbar" style="width: 90%;">Python</div>
+                    </div>
+                    <div class="progress mb-3">
+                        <div class="progress-bar" role="progressbar" style="width: 75%;">C++</div>
+                    </div>
+                    <div class="progress mb-3">
+                        <div class="progress-bar" role="progressbar" style="width: 85%;">MATLAB</div>
+                    </div>
+                    <div class="progress mb-3">
+                        <div class="progress-bar" role="progressbar" style="width: 80%;">GAMS</div>
+                    </div>
+                </div>
+                <!-- Tools and Technologies -->
+                <div class="col-md-6" data-aos="fade-left" data-aos-delay="200">
+                    <h4>Tools & Technologies</h4>
+                    <div class="progress mb-3">
+                        <div class="progress-bar" role="progressbar" style="width: 85%;">TensorFlow</div>
+                    </div>
+                    <div class="progress mb-3">
+                        <div class="progress-bar" role="progressbar" style="width: 80%;">DigSilent Power Factory</div>
+                    </div>
+                    <div class="progress mb-3">
+                        <div class="progress-bar" role="progressbar" style="width: 70%;">AWS</div>
+                    </div>
+                    <div class="progress mb-3">
+                        <div class="progress-bar" role="progressbar" style="width: 75%;">Docker</div>
+                    </div>
+                </div>
+                <!-- Additional Skills -->
+                <div class="col-md-6" data-aos="fade-right" data-aos-delay="300">
+                    <h4>Simulation and Modeling</h4>
+                    <ul class="list-group">
+                        <li class="list-group-item icon-text"><i class="fas fa-laptop-code icon"></i> MATLAB-SIMULINK
+                        </li>
+                        <li class="list-group-item icon-text"><i class="fas fa-cogs icon"></i> DigSilent Power Factory
+                        </li>
+                        <li class="list-group-item icon-text"><i class="fas fa-solar-panel icon"></i> PVsyst</li>
+                        <li class="list-group-item icon-text"><i class="fas fa-tools icon"></i> PSCAD, PSIM, ETAP</li>
+                    </ul>
+                </div>
+                <div class="col-md-6" data-aos="fade-left" data-aos-delay="300">
+                    <h4>Documentation & Development Tools</h4>
+                    <ul class="list-group">
+                        <li class="list-group-item icon-text"><i class="fas fa-file-alt icon"></i> MS Word, LaTeX,
+                            Overleaf</li>
+                        <li class="list-group-item icon-text"><i class="fas fa-presentation icon"></i> MS PowerPoint</li>
+                        <li class="list-group-item icon-text"><i class="fas fa-database icon"></i> MS Excel, MongoDB</li>
+                        <li class="list-group-item icon-text"><i class="fas fa-drafting-compass icon"></i> Autodesk
+                            Inventor</li>
+                        <li class="list-group-item icon-text"><i class="fas fa-code-branch icon"></i> Git</li>
+                        <li class="list-group-item icon-text"><i class="fas fa-cloud icon"></i> AWS, Docker</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2 data-aos="fade-up">Contact Me</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <form>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Your Name</label>
+                            <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Your Email</label>
+                            <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Your Message</label>
+                            <textarea class="form-control" id="message" rows="5" placeholder="Enter your message"
+                                required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Send Message</button>
+                    </form>
+                    <div class="text-center mt-4">
+                        <p>Or reach out directly:</p>
+                        <p>
+                            <a href="mailto:hnajafizadeh@ec.iut.ac.ir">
+                                <i class="fas fa-envelope"></i> hnajafizadeh@ec.iut.ac.ir
+                            </a>
+                        </p>
+                        <p>
+                            <a href="https://www.linkedin.com/in/hadi-najafizadeh-moshizi" target="_blank">
+                                <i class="fab fa-linkedin"></i> LinkedIn Profile
+                            </a>
+                        </p>
+                        <p>
+                            <i class="fas fa-phone"></i> +98 90 1501 9161
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Back to Top Button -->
+    <button id="backToTopBtn"><i class="fas fa-arrow-up"></i></button>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Hadi Najafizadeh-Moshizi. All rights reserved.</p>
+            <div>
+                <a href="https://www.linkedin.com/in/hadi-najafizadeh-moshizi" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="mailto:hnajafizadeh@ec.iut.ac.ir">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- AOS JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+<!-- ProgressBar.js and Scroll-trigger Animation -->
+<script src="https://cdn.jsdelivr.net/npm/progressbar.js"></script>
+<script>
+    AOS.init({
+        duration: 1000,
+        once: true
+    });
+
+    // Function to create and animate circular progress bars
+    function createCircle(id, value, color) {
+        var bar = new ProgressBar.Circle(document.querySelector(id), {
+            strokeWidth: 6,
+            color: color,
+            trailColor: '#eee',
+            trailWidth: 5,
+            easing: 'easeInOut',
+            duration: 1400,
+            text: {
+                autoStyleContainer: false
+            },
+            from: { color: color, width: 6 },
+            to: { color: color, width: 6 },
+            step: function (state, bar) {
+                bar.path.setAttribute('stroke', state.color);
+                bar.setText(value + '/160');
+            }
+        });
+
+        bar.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
+        bar.text.style.fontSize = '1.2rem';
+        bar.text.style.fontWeight = 'bold';
+        bar.text.style.color = '#003366';
+
+        bar.animate((value - 10) / 150);  // Animate from 10 to the score
+    }
+
+    // Function to check if an element is in the viewport
+    function isElementInViewport(el) {
+        var rect = el.getBoundingClientRect();
+        return (
+            rect.top < (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.bottom >= 0
+        );
+    }
+
+    // Function to animate when in view
+    function animateWhenInView() {
+        var detSection = document.getElementById('det-results');
+        if (isElementInViewport(detSection)) {
+            createCircle('#circle-overall', 140, '#ffd700');
+            createCircle('#circle-speaking', 140, '#ffd700');
+            createCircle('#circle-writing', 145, '#ffd700');
+            createCircle('#circle-reading', 150, '#ffd700');
+            createCircle('#circle-listening', 125, '#ffd700');
+            window.removeEventListener('scroll', animateWhenInView); // Remove scroll listener after animation
+        }
+    }
+
+    // Scroll Event Listener
+    window.addEventListener('scroll', animateWhenInView);
+
+    // Trigger animation if the section is already in view
+    animateWhenInView();
+
+    // Back to Top Button
+    const backToTopBtn = document.getElementById('backToTopBtn');
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+            backToTopBtn.style.display = 'block';
+        } else {
+            backToTopBtn.style.display = 'none';
+        }
+    });
+    backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+</script>
+</body>
+
+</html>
