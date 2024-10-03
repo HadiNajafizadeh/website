@@ -412,7 +412,7 @@
                             <p class="mb-1">
                                 <strong>To Appear in:</strong> IEEE Transactions on Industrial Informatics
                             </p>
-                            <small class="text-muted">May 2024 (Under Review)</small>
+                            <small class="text-muted">May 2024 (Under-Review)</small>
                         </div>
                     </div>
                 </div>
@@ -521,48 +521,50 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact">
-        <div class="container">
-            <h2 data-aos="fade-up">Contact Me</h2>
-            <div class="row justify-content-center">
-                <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
-                    <form>
-                        <div class="mb-3">
-                            <label for="name" class="form-label">Your Name</label>
-                            <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="email" class="form-label">Your Email</label>
-                            <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="message" class="form-label">Your Message</label>
-                            <textarea class="form-control" id="message" rows="5" placeholder="Enter your message"
-                                required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary w-100">Send Message</button>
-                    </form>
-                    <div class="text-center mt-4">
-                        <p>Or reach out directly:</p>
-                        <p>
-                            <a href="mailto:hnajafizadeh@ec.iut.ac.ir">
-                                <i class="fas fa-envelope"></i> hnajafizadeh@ec.iut.ac.ir
-                            </a>
-                        </p>
-                        <p>
-                            <a href="https://www.linkedin.com/in/hadi-najafizadeh-moshizi" target="_blank">
-                                <i class="fab fa-linkedin"></i> LinkedIn Profile
-                            </a>
-                        </p>
-                        <p>
-                            <i class="fas fa-phone"></i> +98 90 1501 9161
-                        </p>
+<!-- Contact Section -->
+<section id="contact">
+    <div class="container">
+        <h2 data-aos="fade-up">Contact Me</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+                <form id="contact-form">
+                    <!-- Hidden input for contact number (optional) -->
+                    <input type="hidden" name="contact_number">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Your Name</label>
+                        <input type="text" class="form-control" name="from_name" id="name" placeholder="Enter your name" required>
                     </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Your Email</label>
+                        <input type="email" class="form-control" name="reply_to" id="email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="message" class="form-label">Your Message</label>
+                        <textarea class="form-control" name="message" id="message" rows="5" placeholder="Enter your message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Send Message</button>
+                </form>
+                <!-- Direct Contact Information -->
+                <div class="text-center mt-4">
+                    <p>Or reach out directly:</p>
+                    <p>
+                        <a href="mailto:hnajafizadeh@ec.iut.ac.ir">
+                            <i class="fas fa-envelope"></i> hnajafizadeh@ec.iut.ac.ir
+                        </a>
+                    </p>
+                    <p>
+                        <a href="https://www.linkedin.com/in/hadi-najafizadeh-moshizi" target="_blank">
+                            <i class="fab fa-linkedin"></i> LinkedIn Profile
+                        </a>
+                    </p>
+                    <p>
+                        <i class="fas fa-phone"></i> +98 90 1501 9161
+                    </p>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Back to Top Button -->
     <button id="backToTopBtn"><i class="fas fa-arrow-up"></i></button>
@@ -668,6 +670,44 @@
         });
     });
 </script>
+
+<!-- Include EmailJS SDK -->
+<script type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init("rXLevA9nTcdJdnWik");
+   })();
+</script>
+
+<script type="text/javascript">
+    // Initialize EmailJS with your User ID
+    (function(){
+        emailjs.init("rXLevA9nTcdJdnWik");
+    })();
+
+    // Add event listener to the form
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent default form submission
+
+        // Generate a five-digit random number for the contact number variable (optional)
+        this.contact_number.value = Math.random() * 100000 | 0;
+
+        // Send the form data using EmailJS
+        emailjs.sendForm('service_s0umol6', 'YOUR_TEMPLATE_ID', this)
+            .then(function() {
+                alert('Message sent successfully!');
+                // Optionally, reset the form
+                document.getElementById('contact-form').reset();
+            }, function(error) {
+                alert('Failed to send message. Please try again later.');
+                console.error('EmailJS Error:', error);
+            });
+    });
+</script>
+
+
 </body>
 
 </html>
